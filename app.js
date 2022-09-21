@@ -1,14 +1,19 @@
-import koa from "koa" 
+import koa from "koa"
 //Parse the receive json and send pretty json
 import json from "koa-json"
+// Import the helmet middleware
+import helmet from "koa-helmet"
 //import the router from the route.js
-import {router} from "./routes.js"
+import { router } from "./routes.js"
 
 //Create a koa app
 const app = new koa()
 
 //Use the json middleware
 app.use(json())
+
+//Enable the helmet middleware
+app.use(helmet())
 
 //Enable the router on the app
 app.use(router.routes())
@@ -21,7 +26,7 @@ app.use(ctx => ctx.body = "<h1> Hello world !  </h1>")
 //Set handler to show error
 app.on("error", err => console.log(err))
 
-//Start the koa app 
+//Start the koa app
 app.listen({
   port: 80
 }, () => console.log("Koa server started..."))
