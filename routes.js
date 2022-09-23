@@ -1,6 +1,9 @@
 //Include the router module to create a router
 import koaRouter from "koa-router"
 
+// Importation des fonctions depuis le fichier de requete post
+import {createUser} from "./requests/post.js"
+
 //Create a new router instance
 export const router = new koaRouter();
 
@@ -10,12 +13,14 @@ router.get("/test", ctx => ctx.body = "Router is used ! ")
 //----------------------CRUD API-----------------------------
 
 //Create a path to add a user
-router.post("/users/", ctx => ctx.body = "New user add ! ")
+router.post("/users/", createUser)
 
 //Create a path to get a specify user
 router.get("/users/:id", ctx => ctx.body = {
   userId: ctx.params.id
 })
+
+
 
 //Create a path to modify the user 
 router.put("/users/:id", ctx => ctx.body = "User "+ctx.params.id+" well modify !")
