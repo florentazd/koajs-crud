@@ -4,6 +4,10 @@ import koaRouter from "koa-router"
 // Importation des fonctions depuis le fichier de requete post
 import {createUser} from "./requests/post.js"
 
+// Importation des modules depuis le fichier de requete get
+import {getAllUsers} from "./requests/get.js"
+
+
 //Create a new router instance
 export const router = new koaRouter();
 
@@ -20,6 +24,8 @@ router.get("/users/:id", ctx => ctx.body = {
   userId: ctx.params.id
 })
 
+// La route de récupération des données de tous les utilisateurs
+router.get("/users/",getAllUsers)
 
 
 //Create a path to modify the user 
