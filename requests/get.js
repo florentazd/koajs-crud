@@ -39,8 +39,6 @@ export const getUser = async ctx => {
 	 // On récupère l'id de l''utilisateur recherchés depuis les paramètres de la requete
 	 const userId = ctx.params.id
 
-	 console.log(ctx.params)
-
 	 if(!mongoose.Types.ObjectId.isValid(userId)){
 	 	ctx.status = 400
 	 	return
