@@ -1,5 +1,5 @@
 <h1>Koa.JS CRUD :globe_with_meridians:</h1>
-<p><b>koajs-crud</b> est une implemétation d'une API REST basée sur le framework <a href="https://koa.js">Koa.JS</a></p>
+<p><b>koajs-crud</b> est une implémentation d'une API REST basée sur le framework <a href="https://koa.js">Koa.JS</a></p>
 
 <h3>Liste des routes de l'api</h3>
 <details>
