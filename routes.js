@@ -5,7 +5,7 @@ import koaRouter from "koa-router"
 import {createUser} from "./requests/post.js"
 
 // Importation des modules depuis le fichier de requete get
-import {getAllUsers} from "./requests/get.js"
+import {getAllUsers, getUser} from "./requests/get.js"
 
 
 //Create a new router instance
@@ -20,9 +20,7 @@ router.get("/test", ctx => ctx.body = "Router is used ! ")
 router.post("/users/", createUser)
 
 //Create a path to get a specify user
-router.get("/users/:id", ctx => ctx.body = {
-  userId: ctx.params.id
-})
+router.get("/users/:id", getUser)
 
 // La route de récupération des données de tous les utilisateurs
 router.get("/users/",getAllUsers)
